@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Studienotities Organizer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Studienotities Organizer</h1>
+    <p class="subtitle">Semi-automatische classificatie met menselijke review</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Nieuwe notitie</h2>
+      <form id="note-form">
+        <label for="sprint">Sprint</label>
+        <input type="text" id="sprint" placeholder="bv. Sprint 4" required />
+
+        <label for="note-text">Notitie</label>
+        <textarea id="note-text" rows="6" placeholder="Plak of typ je notitie hier..." required></textarea>
+
+        <button type="submit">Classificeren &amp; opslaan</button>
+      </form>
+      <div id="note-result" class="result hidden"></div>
+    </section>
+
+    <section class="card">
+      <h2>Review-wachtrij <span id="pending-count" class="badge">0</span></h2>
+      <p class="hint">Notities met een lage confidence-score wachten hier op jouw bevestiging.</p>
+      <div id="pending-list"></div>
+    </section>
+
+    <section class="card">
+      <h2>Overzicht</h2>
+      <div id="overview"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
